@@ -12,23 +12,26 @@
       <h1>Terminvereinbarung</h1>
     </div>
     <div class="main">
+      <?php
+      $json_file_path = '../model/TerminMockup.json';
+ 
+      // JSON-Datei lesen
+      $json_data = file_get_contents($json_file_path);
+       
+      // JSON-Daten dekodieren
+      $data_array = json_decode($json_data, true); // Das zweite Argument "true" gibt an, dass ein assoziatives Array verwendet werden soll
+      $group=array();
+      foreach($data_array as $elm){array_push($group,$elm["Gruppe"]);}$group=array_unique($group, SORT_STRING);
+      ?>
       <form>
         <label for="dienstleistung">Dienstleistung:</label>
         <select id="dienstleistung">
-          <option value="sales">Sales</option>
-          <option value="researchanddevelopment">Research and Development</option>
-          <option value="services">Services</option>
-          <option value="support">Support</option>
-          <option value="training">Training</option>
-          <option value="accounting">Accounting</option>
-          <option value="productmanagement">Product Management</option>
-          <option value="humanresources">Human Resources</option>
-          <option value="marketing">Marketing</option>
-          <option value="businessdevelopment">Business Development</option>
-          <option value="legal">Legal</option>
-          <option value="engineering">Engineering</option>
-          
-          <!-- Weitere Dienste hier -->
+          <?php
+          foreach ($group as $elm){
+          echo "<option value=\$elm\"> $elm</option>";
+          }
+           ?>
+          <!-- Schauen, dass es mit der Jason Datei "TerminMockup.json" verbunden wird  -->
         </select>
         <br>
         <br>

@@ -15,8 +15,19 @@
       <form>
         <label for="dienstleistung">Dienstleistung:</label>
         <select id="dienstleistung">
-          <option value="dienst1">Dienst 1</option>
-          <option value="dienst2">Dienst 2</option>
+          <option value="sales">Sales</option>
+          <option value="researchanddevelopment">Research and Development</option>
+          <option value="services">Services</option>
+          <option value="support">Support</option>
+          <option value="training">Training</option>
+          <option value="accounting">Accounting</option>
+          <option value="productmanagement">Product Management</option>
+          <option value="humanresources">Human Resources</option>
+          <option value="marketing">Marketing</option>
+          <option value="businessdevelopment">Business Development</option>
+          <option value="legal">Legal</option>
+          <option value="engineering">Engineering</option>
+          
           <!-- Weitere Dienste hier -->
         </select>
         <br>
